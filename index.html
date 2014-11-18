@@ -9,10 +9,10 @@
 </head>
 <body ng-controller="gameController">
 	<div ng-show="!game.started">
-	  {{game.level.introduction}}
+	  {{level.intro}}
 	</div>
-	<p>{{game.status}}</p>
-	<p>{{game.time}}</p>
+	<p>{{level.status}}</p>
+	<p>{{level.time}}</p>
 	<div class="sortable-container">
 		<ul class="sortable-row" ng-model="bookshelf" as-sortable="sortableOptions">
 			<li class="book" ng-repeat="book in bookshelf" as-sortable-item>
@@ -26,4 +26,4 @@
 		</ul>
 	</div>
 </body>
-</html> 
+</html>

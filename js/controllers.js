@@ -11,31 +11,36 @@ expansiveClassificationGame.controller('gameController', ['$scope', '$http',
 			initLevel(data.levels[0]);
     }).error(function(data, status, headers, config) {
 		});
-    
-	
+
+
 		$scope.sortableOptions = {
 			 // no sortable options set
 		};
-		
+
 		function initLevel(levelData) {
 		  var colors = levelData.colors || $scope.gameData.defaultColors;
-		  		
+      $scope.level = levelData;
+
 			// add books to bookshelf
 			levelData.callNumbers.forEach(function(callNumber) {
 				$scope.bookshelf.push( {'callNumber': callNumber } );
 			});
-			
+
 			// shuffle books
 			shuffle($scope.bookshelf);
-	
+
 			// decorate books with colors, etc.
-			$scope.bookshelf.forEach(function(book) {
-				book.formattedCallNumber = formatCallNumber(book.callNumber);
-				book.height = (0.7 + Math.random()*0.3) * $scope.bookshelfHeight;
-				book.color = colors[Math.floor(Math.random() * colors.length)];
-				console.log(book.color);
-			});
+      decorateBooks($scope.bookshelf, colors, $scope.bookshelfHeight);
+
 		}
+
+    function decorateBooks(books, colors, height) {
+      books.forEach(function(book) {
+        book.formattedCallNumber = formatCallNumber(book.callNumber);
+        book.height = (0.7 + Math.random()*0.3) * height;
+        book.color = colors[Math.floor(Math.random() * colors.length)];
+      });
+    }
 	}
 ]);
 

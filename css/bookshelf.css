@@ -1,0 +1,44 @@
+.bookshelf-game {
+  background-color: black;
+  color: white;
+  display:inline-block;
+}
+
+.bookshelf {
+	padding: 1em;
+	overflow:hidden;
+}
+.status {
+	background-color: black;
+	color: white;
+	margin: 0;
+	padding: 0.5em;
+	font-size: large;
+}
+.as-sortable-item,
+.as-sortable-placeholder,
+.book {
+	float: left;
+	margin: 1px;
+	height: 200px;
+}
+.spine {
+	padding: 2px;
+	position: relative;
+	background-image:url('shadow.png')
+}
+.label {
+	padding: 2px;
+	white-space: pre;
+	position: relative;
+	background-color:white;
+	color: black;
+	font-family: sans-serif;
+	font-size: xx-small;
+	text-align: center;
+	background-image:url('shadow.png')
+}
+
+.sortable-container {
+  display:inline-block;
+}

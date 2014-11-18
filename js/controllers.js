@@ -12,6 +12,10 @@ expansiveClassificationGame.controller('gameController', ['$scope', '$http',
     }).error(function(data, status, headers, config) {
 		});
 
+    $scope.startLevel = function() {
+      $scope.level.started = true;
+    }
+
 
 		$scope.sortableOptions = {
 			 // no sortable options set

@@ -8,12 +8,13 @@
   <link rel="stylesheet" href="css/bookshelf.css">
 </head>
 <body ng-controller="gameController">
-	<div ng-show="!game.started">
+	<div ng-show="!level.started">
 	  {{level.intro}}
+		<button ng-click="startLevel()">Begin!</button>
 	</div>
 	<p>{{level.status}}</p>
 	<p>{{level.time}}</p>
-	<div class="sortable-container">
+	<div class="sortable-container" ng-show="level.started">
 		<ul class="sortable-row" ng-model="bookshelf" as-sortable="sortableOptions">
 			<li class="book" ng-repeat="book in bookshelf" as-sortable-item>
 			  <div

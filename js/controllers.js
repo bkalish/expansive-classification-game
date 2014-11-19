@@ -1,10 +1,12 @@
 var expansiveClassificationGame = angular.module('expansiveClassificationGame', ['ui.sortable']);
 
-expansiveClassificationGame.controller('gameController', ['$scope', '$http',
-  function ($scope, $http) {
+expansiveClassificationGame.controller('gameController', ['$scope', '$interval', '$http',
+  function ($scope, $interval, $http) {
 		$scope.bookshelfHeight = 200;
 		$scope.bookshelf = [];
 		$scope.gameData = {};
+
+    var timer;
 
 		$http.get('game-data.json').success(function(data) {
 		  $scope.gameData = data;
@@ -14,6 +16,8 @@ expansiveClassificationGame.controller('gameController', ['$scope', '$http',
 
     $scope.startLevel = function() {
       $scope.level.started = true;
+      $scope.level.clock = 0;
+      timer = $interval($scope.incrementTimer, 250);
     }
 
 
@@ -44,6 +48,10 @@ expansiveClassificationGame.controller('gameController', ['$scope', '$http',
         book.height = (0.7 + Math.random()*0.3) * height;
         book.color = colors[Math.floor(Math.random() * colors.length)];
       });
+    }
+
+    $scope.incrementTimer = function() {
+      $scope.level.clock++;
     }
 	}
 ]);

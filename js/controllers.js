@@ -1,3 +1,6 @@
+'use strict';
+
+/*global angular */
 var expansiveClassificationGame = angular.module('expansiveClassificationGame', ['ui.sortable']);
 
 expansiveClassificationGame.controller('gameController', ['$scope', '$interval', '$http',
@@ -18,7 +21,7 @@ expansiveClassificationGame.controller('gameController', ['$scope', '$interval',
       $scope.level.started = true;
       $scope.level.clock = 0;
       timer = $interval($scope.incrementTimer, 250);
-    }
+    };
 
 
 		$scope.sortableOptions = {
@@ -52,7 +55,7 @@ expansiveClassificationGame.controller('gameController', ['$scope', '$interval',
 
     $scope.incrementTimer = function() {
       $scope.level.clock++;
-    }
+    };
 	}
 ]);
 

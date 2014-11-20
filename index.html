@@ -12,19 +12,21 @@
 	  {{level.intro}}
 		<button ng-click="startLevel()">Begin!</button>
 	</div>
-	<p>{{level.status}}</p>
-	<p>{{level.clock}}</p>
-	<div class="sortable-container" ng-show="level.started">
-		<ul class="sortable-row" ng-model="bookshelf" as-sortable="sortableOptions">
-			<li class="book" ng-repeat="book in bookshelf" as-sortable-item>
-			  <div
-			  	class="spine"
-			  	as-sortable-item-handle
-			  	style="height: {{book.height}}px; top: {{200-book.height}}px; background-color: {{book.color}};">
-					<div class="label" style="bottom: {{40-book.height}}px;">{{book.formattedCallNumber}}</div>
-				</div>
-			</li>
-		</ul>
+	<div ng-show="level.started">
+		<p>{{level.status}}</p>
+		<p>{{level.clock}}</p>
+		<div class="sortable-container">
+			<ul class="sortable-row" ng-model="bookshelf" as-sortable="sortableOptions">
+				<li class="book" ng-repeat="book in bookshelf" as-sortable-item>
+				  <div
+				  	class="spine"
+				  	as-sortable-item-handle
+				  	style="height: {{book.height}}px; top: {{200-book.height}}px; background-color: {{book.color}};">
+						<div class="label" style="bottom: {{40-book.height}}px;">{{book.formattedCallNumber}}</div>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </body>
 </html>

@@ -1,0 +1,16 @@
+{
+  "bitwise": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "freeze": true,
+  "indent": 2,
+  "latedef": "nofunc",
+  "laxcomma": true,
+  "node": true,
+  "trailing": true,
+  "strict": true,
+  "unused": "vars",
+  "undef": true,
+  "quotmark": "single"
+}

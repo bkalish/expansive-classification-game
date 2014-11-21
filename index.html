@@ -13,10 +13,12 @@
 		<button ng-click="startLevel()">Begin!</button>
 	</div>
 	<div ng-show="level.started">
-		<p>{{level.status}}</p>
-		<p>{{level.clock}}</p>
+		<div class="status-bar">
+			<p class="status-message">{{level.status}}</p>
+			<p class="status-clock">{{level.clock}}</p>
+		</div>
 		<div class="sortable-container">
-			<ul class="sortable-row" ng-model="bookshelf" as-sortable="sortableOptions">
+			<ul class="sortable-row bookshelf" ng-model="bookshelf" as-sortable="sortableOptions">
 				<li class="book" ng-repeat="book in bookshelf" as-sortable-item>
 				  <div
 				  	class="spine"

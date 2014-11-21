@@ -5,15 +5,27 @@
 }
 
 .bookshelf {
-	padding: 1em;
+	padding: 0;
 	overflow:hidden;
 }
-.status {
+.status-bar {
 	background-color: black;
 	color: white;
 	margin: 0;
 	padding: 0.5em;
 	font-size: large;
+  position:relative;
+  height:2em;
+}
+.status-message {
+  position:absolute;
+  top:0;
+  left:1em;
+}
+.status-clock {
+  position:absolute;
+  top:0;
+  right:1em;
 }
 .as-sortable-item,
 .as-sortable-placeholder,

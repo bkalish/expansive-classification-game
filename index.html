@@ -6,6 +6,7 @@
 	<script src="js/controllers.js"></script>
 	<link rel="stylesheet" type="text/css" href="lib/ng-sortable/ng-sortable.min.css">
   <link rel="stylesheet" href="css/bookshelf.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body ng-controller="gameController">
 	<div ng-show="!level.started">
@@ -23,7 +24,7 @@
 				  <div
 				  	class="spine"
 				  	as-sortable-item-handle
-				  	style="height: {{book.height}}px; top: {{200-book.height}}px; background-color: {{book.color}};">
+				  	style="height: {{book.height}}px; top: {{bookshelfHeight-book.height}}px; background-color: {{book.color}};">
 						<div class="label" style="bottom: {{40-book.height}}px;">{{book.formattedCallNumber}}</div>
 					</div>
 				</li>

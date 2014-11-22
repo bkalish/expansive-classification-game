@@ -1,7 +1,8 @@
-.bookshelf-game {
-  background-color: black;
-  color: white;
-  display:inline-block;
+body {
+  width: 480px;
+  height: 320px;
+  margin: 0;
+  padding: 2px;
 }
 
 .bookshelf {
@@ -32,7 +33,7 @@
 .book {
 	float: left;
 	margin: 1px;
-	height: 200px;
+	height: 130px;
 }
 .spine {
 	padding: 2px;

@@ -5,7 +5,7 @@ var expansiveClassificationGame = angular.module('expansiveClassificationGame', 
 
 expansiveClassificationGame.controller('gameController', ['$scope', '$interval', '$http',
   function ($scope, $interval, $http) {
-		$scope.bookshelfHeight = 200;
+		$scope.bookshelfHeight = 130;
 		$scope.bookshelf = [];
 		$scope.gameData = {};
 
@@ -62,7 +62,7 @@ expansiveClassificationGame.controller('gameController', ['$scope', '$interval',
     function decorateBooks(books, colors, height) {
       books.forEach(function(book) {
         book.formattedCallNumber = formatCallNumber(book.callNumber);
-        book.height = (0.7 + Math.random()*0.3) * height;
+        book.height = (0.8 + Math.random()*0.2) * (height-1);
         book.color = colors[Math.floor(Math.random() * colors.length)];
       });
     }

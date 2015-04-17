@@ -1,21 +1,33 @@
 'use strict';
 
 /*global angular */
-var expansiveClassificationGame = angular.module('expansiveClassificationGame', ['ui.sortable']);
+var expansiveClassificationGame = angular.module(
+  'expansiveClassificationGame',
+  ['ui.sortable', 'cfp.hotkeys']
+);
 
-expansiveClassificationGame.controller('gameController', ['$scope', '$interval', '$http',
-  function ($scope, $interval, $http) {
+expansiveClassificationGame.controller(
+    'gameController',
+    ['$scope', '$interval', '$http', 'hotkeys',
+  function ($scope, $interval, $http, hotkeys) {
 		$scope.bookshelfHeight = 130;
+    $scope.pauseButtonClass = "fa fa-pause";
 		$scope.bookshelf = [];
 		$scope.gameData = {};
 
     var timer;
+    var paused = false;
+
+    hotkeys.add({
+      combo: 'space',
+      description: 'Pause / Resume the game',
+      callback: function () { $scope.pause() }
+    });
 
 		$http.get('game-data.json').success(function(data) {
 		  $scope.gameData = data;
 			initLevel(data.levels[0]);
-    }).error(function(data, status, headers, config) {
-		});
+    }).error(function(data, status, headers, config) {});
 
     $scope.startLevel = function() {
       $scope.level.started = true;
@@ -27,6 +39,15 @@ expansiveClassificationGame.controller('gameController', ['$scope', '$interval',
 		$scope.sortableOptions = {
       orderChanged: updateGame
 		};
+
+    $scope.pause = function() {
+      paused = !paused;
+      if (paused){
+        $scope.pauseButtonClass = "fa fa-play";
+      } else {
+        $scope.pauseButtonClass = "fa fa-pause";
+      }
+    }
 
     function updateGame() {
       var score = getSortScore(
@@ -87,7 +108,9 @@ expansiveClassificationGame.controller('gameController', ['$scope', '$interval',
      * Increments the level clock.
      */
     $scope.incrementTimer = function() {
-      $scope.level.clock++;
+      if (!paused) {
+        $scope.level.clock++;
+      }
     };
 	}
 ]);

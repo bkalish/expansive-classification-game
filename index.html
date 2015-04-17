@@ -4,8 +4,10 @@
 	<script src="lib/angular.js"></script>
 	<script src="lib/ng-sortable/ng-sortable.js"></script>
 	<script src="js/controllers.js"></script>
+	<script src="lib/angular-hotkeys/build/hotkeys.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="lib/ng-sortable/ng-sortable.min.css">
   <link rel="stylesheet" href="css/bookshelf.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body ng-controller="gameController">
@@ -16,6 +18,7 @@
 	<div ng-show="level.started">
 		<div class="status-bar">
 			<p class="status-message">{{level.status}}</p>
+			<p ng-click="pause()" class="pause-button" ng-class="pauseButtonClass"></p>
 			<p class="status-clock">{{level.clock}}</p>
 		</div>
 		<div class="sortable-container">

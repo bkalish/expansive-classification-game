@@ -5,17 +5,17 @@ module.exports = function(grunt) {
 		pkg: packageData,
 
 		jshint: {
-			core: ['js/**/*.js']
+			core: ['js/src/**/*.js']
 		},
 
 		'angular-builder': {
       options: {
-        mainModule: 'shelvingGame',
+        mainModule: 'ShelvingGame',
 				externalModules: ['ui.sortable', 'cfp.hotkeys']
       },
       app: {
-        src:  'js/**/*.js',
-        dest: 'build/project.js'
+        src:  'js/src/**/*.js',
+        dest: 'js/shelving-game.js'
       }
     }
 	});

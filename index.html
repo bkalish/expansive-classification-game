@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="shelvingGame">
+<html ng-app="ShelvingGame">
 <head>
 	<script src="lib/angular.js"></script>
 	<script src="lib/ng-sortable/ng-sortable.js"></script>
-	<script src="build/project.js"></script>
+	<script src="js/shelving-game.js"></script>
 	<script src="lib/angular-hotkeys/build/hotkeys.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="lib/ng-sortable/ng-sortable.min.css">
   <link rel="stylesheet" href="css/bookshelf.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body ng-controller="gameController">
+<body ng-controller="GameController">
 	<div ng-show="!level.started">
 	  {{level.intro}}
 		<button ng-click="startLevel()">Begin!</button>

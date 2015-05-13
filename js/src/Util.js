@@ -3,7 +3,7 @@
 
   /*global angular */
 
-  angular.module('shelvingGame').factory('util', function() {
+  angular.module('ShelvingGame').factory('util', function() {
     return {
       /**
        * Shuffles an array.

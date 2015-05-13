@@ -3,7 +3,7 @@
 
   /*global angular */
 
-  angular.module('shelvingGame').factory('ExpansiveClassification', function() {
+  angular.module('ShelvingGame').factory('ExpansiveClassification', function() {
     return {
       /**
        * Compares two Expansive Classification Numbers.

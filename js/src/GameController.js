@@ -2,16 +2,8 @@
   'use strict';
 
   /*global angular */
-  var shelvingGame = angular.module(
-    'shelvingGame',
-    [
-      'ui.sortable',
-      'cfp.hotkeys'
-    ]
-  );
-
-  shelvingGame.controller(
-      'gameController',
+  angular.module('ShelvingGame').controller(
+      'GameController',
       ['$scope', '$interval', '$http', 'hotkeys', 'ExpansiveClassification', 'util',
     function ($scope, $interval, $http, hotkeys, ExpansiveClassification, util) {
       $scope.bookshelfHeight = 130;

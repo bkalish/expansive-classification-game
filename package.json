@@ -1,0 +1,25 @@
+{
+  "name": "shelving-game",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bkalish/expansive-classification-game.git"
+  },
+  "description": "TinyMCE rich text editor",
+  "author": "Benjamin Kalish <bkalish@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/bkalish/expansive-classification-game/issues"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=0.10.26"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-angular-builder": "^1.0.0-beta3",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "~0.11.4",
+    "grunt-contrib-uglify": "~0.5.1",
+    "load-grunt-tasks": "~0.6.0"
+  }
+}
